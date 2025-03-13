@@ -1,0 +1,12 @@
+/.env
+
+/.idea/
+
+/.phpunit.cache/
+
+/composer.lock
+
+/phpunit.xml
+/_coverage/
+
+/vendor/

@@ -1,0 +1,41 @@
+{
+    "name": "free-elephants/json-api-dto",
+    "description": "JsonApi Document Structure Types",
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "samizdam",
+            "email": "samizdam@inbox.ru"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "ext-json": "*",
+        "psr/http-message": "*"
+    },
+    "require-dev": {
+        "helmich/phpunit-psr7-assert": "^4",
+        "nyholm/psr7": "^1.2",
+        "phpunit/phpunit": "^10.5.38|^11.0"
+    },
+    "suggest": {
+        "free-elephants/di": "*",
+        "nyholm/psr7": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "FreeElephants\\": [
+                "src/FreeElephants"
+            ]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FreeElephants\\": [
+                "tests/FreeElephants"
+            ]
+        }
+    }
+}
