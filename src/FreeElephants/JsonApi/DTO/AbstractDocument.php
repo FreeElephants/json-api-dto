@@ -1,6 +1,6 @@
 <?php
 
-namespace FreeElephants\JsonApiToolkit\DTO;
+namespace FreeElephants\JsonApi\DTO;
 
 use Psr\Http\Message\MessageInterface;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace FreeElephants\JsonApiToolkit\DTO\Reflection;
+namespace FreeElephants\JsonApi\DTO\Reflection;
 
 class SuitableRelationshipsTypeDetector
 {

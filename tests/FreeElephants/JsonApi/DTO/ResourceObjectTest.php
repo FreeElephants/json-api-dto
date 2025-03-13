@@ -1,12 +1,12 @@
 <?php
 
-namespace FreeElephants\JsonApiToolkit\DTO;
+namespace FreeElephants\JsonApi\DTO;
 
-use FreeElephants\JsonApiToolkit\AbstractTestCase;
+use FreeElephants\JsonApi\AbstractTestCase;
 
-class ResourceObjectTestPHP8 extends AbstractTestCase
+class ResourceObjectTest extends AbstractTestCase
 {
-    public function testUnionTypes()
+    public function testRelationshipTypes()
     {
         $resourceObject = new class([
             'id'            => 'id',
@@ -22,12 +22,17 @@ class ResourceObjectTestPHP8 extends AbstractTestCase
                     ],
                 ],
             ],
-        ]) extends AbstractResourceObject{
+        ]) extends AbstractResourceObject {
             public Example\Attributes $attributes;
-            public Example\OneRelationships|Example\TwoRelationships $relationships;
+            public Example\OneRelationships $relationships;
         };
 
+        $this->assertInstanceOf(Example\OneRelationships::class, $resourceObject->relationships);
         $this->assertSame('one', $resourceObject->relationships->one->data->type);
     }
 }
 
+class Attributes extends AbstractAttributes
+{
+    public string $foo;
+}

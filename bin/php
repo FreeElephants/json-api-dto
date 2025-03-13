@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source .env
+
 test -t 1 && USE_TTY="--tty"
 
 docker run --rm --interactive ${USE_TTY} \

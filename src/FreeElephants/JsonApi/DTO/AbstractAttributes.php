@@ -1,6 +1,6 @@
 <?php
 
-namespace FreeElephants\JsonApiToolkit\DTO;
+namespace FreeElephants\JsonApi\DTO;
 
 abstract class AbstractAttributes extends BaseKeyValueStructure
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace FreeElephants\JsonApiToolkit\DTO;
+namespace FreeElephants\JsonApi\DTO;
 
-use FreeElephants\JsonApiToolkit\AbstractTestCase;
+use FreeElephants\JsonApi\AbstractTestCase;
 use Nyholm\Psr7\ServerRequest;
 
 class DocumentTest extends AbstractTestCase

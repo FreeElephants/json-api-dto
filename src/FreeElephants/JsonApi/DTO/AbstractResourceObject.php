@@ -1,8 +1,8 @@
 <?php
 
-namespace FreeElephants\JsonApiToolkit\DTO;
+namespace FreeElephants\JsonApi\DTO;
 
-use FreeElephants\JsonApiToolkit\DTO\Reflection\SuitableRelationshipsTypeDetector;
+use FreeElephants\JsonApi\DTO\Reflection\SuitableRelationshipsTypeDetector;
 
 /**
  * @property AbstractAttributes $attributes

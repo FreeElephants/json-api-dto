@@ -1,12 +1,12 @@
 <?php
 
-namespace FreeElephants\JsonApiToolkit\DTO\Reflection;
+namespace FreeElephants\JsonApi\DTO\Reflection;
 
-use FreeElephants\JsonApiToolkit\AbstractTestCase;
-use FreeElephants\JsonApiToolkit\DTO\AbstractAttributes;
-use FreeElephants\JsonApiToolkit\DTO\AbstractRelationships;
-use FreeElephants\JsonApiToolkit\DTO\AbstractResourceObject;
-use FreeElephants\JsonApiToolkit\DTO\RelationshipToOne;
+use FreeElephants\JsonApi\AbstractTestCase;
+use FreeElephants\JsonApi\DTO\AbstractAttributes;
+use FreeElephants\JsonApi\DTO\AbstractRelationships;
+use FreeElephants\JsonApi\DTO\AbstractResourceObject;
+use FreeElephants\JsonApi\DTO\RelationshipToOne;
 use ReflectionProperty;
 
 class SuitableRelationshipsTypeDetectorTest extends AbstractTestCase

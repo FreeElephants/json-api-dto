@@ -9,5 +9,5 @@ install: build
 	composer install
 
 test:
-	vendor/bin/phpunit
+	./bin/php vendor/bin/phpunit
 
