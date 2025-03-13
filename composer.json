@@ -16,7 +16,6 @@
         "psr/http-message": "*"
     },
     "require-dev": {
-        "helmich/phpunit-psr7-assert": "^4",
         "nyholm/psr7": "^1.2",
         "phpunit/phpunit": ">=9"
     },
