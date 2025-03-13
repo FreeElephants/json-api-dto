@@ -18,7 +18,7 @@
     "require-dev": {
         "helmich/phpunit-psr7-assert": "^4",
         "nyholm/psr7": "^1.2",
-        "phpunit/phpunit": "^10.5.38|^11.0"
+        "phpunit/phpunit": "*"
     },
     "suggest": {
         "free-elephants/di": "*",
