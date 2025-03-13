@@ -19,14 +19,14 @@ Union types support for relationships in PHP 8.
 ## Usage
 
 Extend super types in your own json api documents and it's parts:
-- \FreeElephants\JsonApiToolkit\DTO\AbstractAttributes
-- \FreeElephants\JsonApiToolkit\DTO\AbstractDocument
-- \FreeElephants\JsonApiToolkit\DTO\AbstractRelationships
-- \FreeElephants\JsonApiToolkit\DTO\AbstractResourceObject
+- \FreeElephants\JsonApi\DTO\AbstractAttributes
+- \FreeElephants\JsonApi\DTO\AbstractDocument
+- \FreeElephants\JsonApi\DTO\AbstractRelationships
+- \FreeElephants\JsonApi\DTO\AbstractResourceObject
 
 And use as properties types: 
-- \FreeElephants\JsonApiToolkit\DTO\RelationshipToOne
-- \FreeElephants\JsonApiToolkit\DTO\ResourceIdentifierObject
+- \FreeElephants\JsonApi\DTO\RelationshipToOne
+- \FreeElephants\JsonApi\DTO\ResourceIdentifierObject
 
 See tests/ for more examples.  
 
