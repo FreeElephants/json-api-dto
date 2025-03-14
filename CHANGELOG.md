@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- AbstractCollection for handle array of resources in data field
+
 ## [0.0.1] - 2025-03-13
 
 ### Added
