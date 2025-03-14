@@ -6,13 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2] - 2025-03-14
+
 ### Added
 - AbstractCollection for handle array of resources in data field
+- Exception on pass array as data into AbstractDocument constructor
 
 ## [0.0.1] - 2025-03-13
 
 ### Added
 - Extract all DTO types from FreeElephants/json-api-php-toolkit to this project
 
-[Unreleased]: https://github.com/FreeElephants/json-api-dto/compare/0.0.1...HEAD
+[Unreleased]: https://github.com/FreeElephants/json-api-dto/compare/0.0.2...HEAD
+[0.0.2]: https://github.com/FreeElephants/json-api-dto/releases/tag/0.0.2
 [0.0.1]: https://github.com/FreeElephants/json-api-dto/releases/tag/0.0.1
