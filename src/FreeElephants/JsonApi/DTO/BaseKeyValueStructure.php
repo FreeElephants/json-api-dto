@@ -12,8 +12,12 @@ class BaseKeyValueStructure
             if ($property->hasType()) {
                 $propertyType = $property->getType();
                 if ($propertyType instanceof \ReflectionNamedType && !$propertyType->isBuiltin()) {
-                    $propertyClassName = $propertyType->getName();
-                    $value = new $propertyClassName($value);
+                    if($propertyType->allowsNull() && is_null($value)) {
+                        $value = null;
+                    } else {
+                        $propertyClassName = $propertyType->getName();
+                        $value = new $propertyClassName($value);
+                    }
                 }
             }
             $this->{$name} = $value;
