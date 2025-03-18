@@ -23,7 +23,10 @@ class DocumentTest extends AbstractTestCase
                 "someNestedStructure": {
                     "someKey": "someValue"
                 }
-            }
+            },
+            "nullableObjectField": null,
+            "nullableScalarField": null,
+            "nullableScalarFilledField": "baz"
         },
         "relationships": {
             "baz": {
@@ -47,6 +50,9 @@ JSON
         $this->assertEquals(new \DateTime('2012-04-23T18:25:43.511Z'), $fooDTO->data->attributes->date);
         $this->assertSame('someValue', $fooDTO->data->attributes->nested->someNestedStructure->someKey);
         $this->assertSame('baz-id', $fooDTO->data->relationships->baz->data->id);
+        $this->assertNull($fooDTO->data->attributes->nullableObjectField);
+        $this->assertNull($fooDTO->data->attributes->nullableScalarField);
+        $this->assertSame('baz', $fooDTO->data->attributes->nullableScalarFilledField);
     }
 }
 
@@ -66,6 +72,14 @@ class FooAttributes extends AbstractAttributes
     public string $foo;
     public \DateTime $date;
     public Nested $nested;
+    public ?NullableObjectAttribute $nullableObjectField;
+    public ?string $nullableScalarField;
+    public ?string $nullableScalarFilledField;
+}
+
+class NullableObjectAttribute
+{
+    public string $someField;
 }
 
 class FooRelationships extends AbstractRelationships
