@@ -10,7 +10,7 @@ use FreeElephants\JsonApi\DTO\Reflection\SuitableRelationshipsTypeDetector;
  */
 class AbstractResourceObject
 {
-    public string $id;
+    public ?string $id = null;
     public string $type;
 
     public function __construct(array $data)
