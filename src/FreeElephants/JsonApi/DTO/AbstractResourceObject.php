@@ -15,7 +15,7 @@ class AbstractResourceObject
 
     public function __construct(array $data)
     {
-        $this->id = $data['id'];
+        $this->id = $data['id'] ?? null;
         $this->type = $data['type'];
 
         $concreteClass = new \ReflectionClass($this);
