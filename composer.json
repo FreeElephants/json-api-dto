@@ -21,7 +21,8 @@
     },
     "suggest": {
         "free-elephants/di": "*",
-        "nyholm/psr7": "^1.2"
+        "nyholm/psr7": "^1.2",
+        "zircote/swagger-php": "*"
     },
     "autoload": {
         "psr-4": {
