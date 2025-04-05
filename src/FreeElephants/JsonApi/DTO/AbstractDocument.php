@@ -2,8 +2,6 @@
 
 namespace FreeElephants\JsonApi\DTO;
 
-use Psr\Http\Message\MessageInterface;
-
 /**
  * @property AbstractResourceObject|mixed $data
  */
@@ -13,9 +11,14 @@ abstract class AbstractDocument extends TopLevel
     {
         $concreteClass = new \ReflectionClass($this);
         $dataProperty = $concreteClass->getProperty('data');
-        /** @var \ReflectionNamedType $reflectionType */
+
         $reflectionType = $dataProperty->getType();
-        $dataClassName = $reflectionType->getName();
+        if ($reflectionType instanceof \ReflectionNamedType) {
+            $dataClassName = $reflectionType->getName();
+        } else {
+            /** @var \ReflectionUnionType $reflectionType */
+            $dataClassName = $reflectionType->getTypes()[0]->getName();
+        }
         if ($dataClassName !== 'array') {
             $data = new $dataClassName($payload['data']);
         } else {

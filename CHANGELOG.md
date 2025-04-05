@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Handle Union Types for `data` and `attributes` fields.  
+
 ## [0.0.5] - 2025-03-24
 
 ### Fixed
