@@ -1,8 +1,11 @@
 <?php
 
-namespace FreeElephants\JsonApi\DTO;
+namespace FreeElephants\JsonApi\DTO\Reflection;
 
 use FreeElephants\JsonApi\AbstractTestCase;
+use FreeElephants\JsonApi\DTO\AbstractResourceObject;
+use FreeElephants\JsonApi\DTO\Example;
+use FreeElephants\JsonApi\DTO\Example\AttributesExt;
 
 class ResourceObjectTestPHP8 extends AbstractTestCase
 {
@@ -13,6 +16,7 @@ class ResourceObjectTestPHP8 extends AbstractTestCase
             'type'          => 'type',
             'attributes'    => [
                 'foo' => 'bar',
+                'baz' => 1,
             ],
             'relationships' => [
                 'one' => [
@@ -23,11 +27,14 @@ class ResourceObjectTestPHP8 extends AbstractTestCase
                 ],
             ],
         ]) extends AbstractResourceObject{
-            public Example\Attributes $attributes;
+            public Example\AttributesExt|Example\Attributes $attributes;
             public Example\OneRelationships|Example\TwoRelationships $relationships;
         };
 
         $this->assertSame('one', $resourceObject->relationships->one->data->type);
+        $this->assertSame('bar', $resourceObject->attributes->foo);
+        $this->assertSame(1, $resourceObject->attributes->baz);
+        $this->assertInstanceOf(AttributesExt::class, $resourceObject->attributes);
     }
 }
 

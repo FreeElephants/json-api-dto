@@ -15,14 +15,19 @@ class AbstractResourceObject
 
     public function __construct(array $data)
     {
-        $this->id = $data['id'] ?? null;
+        $this->id = $data['id'];
         $this->type = $data['type'];
 
         $concreteClass = new \ReflectionClass($this);
 
         if (property_exists($this, 'attributes')) {
-            $attributesProperty = $concreteClass->getProperty('attributes');
-            $attributesClass = $attributesProperty->getType()->getName();
+            $attributesPropertyType = $concreteClass->getProperty('attributes')->getType();
+
+            if($attributesPropertyType instanceof \ReflectionUnionType) {
+                $attributesClass = $attributesPropertyType->getTypes()[0]->getName();
+            } else {
+                $attributesClass = $attributesPropertyType->getName();
+            }
             $this->attributes = new $attributesClass($data['attributes']);
         }
 
