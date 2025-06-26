@@ -31,7 +31,7 @@ class AbstractResourceObject
             $this->attributes = new $attributesClass($data['attributes']);
         }
 
-        if (property_exists($this, 'relationships')) {
+        if (property_exists($this, 'relationships') && array_key_exists('relationships', $data)) {
             $relationshipsData = $data['relationships'];
             $concreteClass = new \ReflectionClass($this);
             $relationshipsProperty = $concreteClass->getProperty('relationships');
