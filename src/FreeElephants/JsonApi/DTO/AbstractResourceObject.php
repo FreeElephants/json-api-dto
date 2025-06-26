@@ -20,7 +20,7 @@ class AbstractResourceObject
 
         $concreteClass = new \ReflectionClass($this);
 
-        if (property_exists($this, 'attributes')) {
+        if (property_exists($this, 'attributes') && array_key_exists('attributes', $data)) {
             $attributesPropertyType = $concreteClass->getProperty('attributes')->getType();
 
             if($attributesPropertyType instanceof \ReflectionUnionType) {
