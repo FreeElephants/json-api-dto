@@ -15,12 +15,12 @@ class AbstractResourceObject
 
     public function __construct(array $data)
     {
-        $this->id = $data['id'];
+        $this->id = $data['id'] ?? null;
         $this->type = $data['type'];
 
         $concreteClass = new \ReflectionClass($this);
 
-        if (property_exists($this, 'attributes')) {
+        if (property_exists($this, 'attributes') && array_key_exists('attributes', $data)) {
             $attributesPropertyType = $concreteClass->getProperty('attributes')->getType();
 
             if($attributesPropertyType instanceof \ReflectionUnionType) {
@@ -31,7 +31,7 @@ class AbstractResourceObject
             $this->attributes = new $attributesClass($data['attributes']);
         }
 
-        if (property_exists($this, 'relationships')) {
+        if (property_exists($this, 'relationships') && array_key_exists('relationships', $data)) {
             $relationshipsData = $data['relationships'];
             $concreteClass = new \ReflectionClass($this);
             $relationshipsProperty = $concreteClass->getProperty('relationships');
