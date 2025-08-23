@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.7] - 2025-06-26
 
 ### Fixed
-- `attributes` and `relationships` fields optional in resource object, according to jsonapi v1.1#7.2.  
+- `id`, `attributes` and `relationships` fields optional in resource object, according to jsonapi v1.1#7.2.
 
 ## [0.0.6] - 2025-04-05
 
