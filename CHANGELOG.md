@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Added
 - BaseKeyValueStructure::assignFieldValue() method for inject custom field instantiation logic. 
+- DateTimeInterface support for as field types. 
 
 ## [0.0.7] - 2025-06-26
 

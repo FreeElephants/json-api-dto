@@ -22,7 +22,11 @@ class BaseKeyValueStructure
                     $value = null;
                 } else {
                     $propertyClassName = $propertyType->getName();
-                    $value = new $propertyClassName($value);
+                    if($propertyClassName === \DateTimeInterface::class) {
+                        $value = new \DateTime($value);
+                    } else {
+                        $value = new $propertyClassName($value);
+                    }
                 }
             }
         }
