@@ -2,6 +2,8 @@
 
 namespace FreeElephants\JsonApi\DTO;
 
+use FreeElephants\JsonApi\DTO\Field\DateTimeFieldValue;
+
 class BaseKeyValueStructure
 {
     public function __construct(array $attributes)
@@ -22,8 +24,8 @@ class BaseKeyValueStructure
                     $value = null;
                 } else {
                     $propertyClassName = $propertyType->getName();
-                    if($propertyClassName === \DateTimeInterface::class) {
-                        $value = new \DateTime($value);
+                    if(in_array($propertyClassName, [\DateTimeInterface::class, \DateTime::class])) {
+                        $value = new DateTimeFieldValue($value);
                     } else {
                         $value = new $propertyClassName($value);
                     }

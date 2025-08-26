@@ -6,9 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Built-in DateTime and DateTimeInterface fields value wrapper for json serialization according to jsonapi spec Examples.
+
 ## [0.0.8] - 2025-08-25
 
-## Added
+### Added
 - BaseKeyValueStructure::assignFieldValue() method for inject custom field instantiation logic. 
 - DateTimeInterface support for as field types. 
 

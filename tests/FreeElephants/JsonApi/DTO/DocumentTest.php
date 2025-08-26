@@ -11,7 +11,7 @@ class DocumentTest extends AbstractTestCase
     public function testFromRequest()
     {
         $request = new ServerRequest('POST', '/foo');
-        $request->getBody()->write(<<<JSON
+        $rawJson = <<<JSON
 {
     "data": {
         "id": "123",
@@ -38,7 +38,8 @@ class DocumentTest extends AbstractTestCase
         }
     }
 }
-JSON
+JSON;
+        $request->getBody()->write($rawJson
         );
 
         $fooDTO = FooDocument::fromHttpMessage($request);
@@ -53,6 +54,8 @@ JSON
         $this->assertNull($fooDTO->data->attributes->nullableObjectField);
         $this->assertNull($fooDTO->data->attributes->nullableScalarField);
         $this->assertSame('baz', $fooDTO->data->attributes->nullableScalarFilledField);
+
+        $this->assertJsonStringEqualsJsonString($rawJson, json_encode($fooDTO));
     }
 }
 
