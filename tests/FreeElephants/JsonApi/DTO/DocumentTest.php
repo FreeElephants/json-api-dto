@@ -18,7 +18,7 @@ class DocumentTest extends AbstractTestCase
         "type": "foo",
         "attributes": {
             "foo": "bar",
-            "date": "2012-04-23T18:25:43.511Z",
+            "date": "2012-04-23T18:25:43.511+03:00",
             "nested": {
                 "someNestedStructure": {
                     "someKey": "someValue"
@@ -39,8 +39,7 @@ class DocumentTest extends AbstractTestCase
     }
 }
 JSON;
-        $request->getBody()->write($rawJson
-        );
+        $request->getBody()->write($rawJson);
 
         $fooDTO = FooDocument::fromHttpMessage($request);
 
@@ -48,7 +47,7 @@ JSON;
         $this->assertInstanceOf(FooAttributes::class, $fooDTO->data->attributes);
         $this->assertSame('foo', $fooDTO->data->type);
         $this->assertSame('bar', $fooDTO->data->attributes->foo);
-        $this->assertEquals(new \DateTime('2012-04-23T18:25:43.511Z'), $fooDTO->data->attributes->date);
+        $this->assertEquals(new \DateTime('2012-04-23T18:25:43.511+03'), $fooDTO->data->attributes->date);
         $this->assertSame('someValue', $fooDTO->data->attributes->nested->someNestedStructure->someKey);
         $this->assertSame('baz-id', $fooDTO->data->relationships->baz->data->id);
         $this->assertNull($fooDTO->data->attributes->nullableObjectField);
