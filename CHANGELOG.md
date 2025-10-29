@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 2025-10-29
+
+### Added
+- Allow non-documented attributes in base kv structure with BaseKeyValueStructure::ignoreUnexpectedAttributes() static accessor
+- Allow non-documented attributes in TopLevel::fromHttpMessage() with second argument 
+
 ## [0.0.9] - 2025-09-11
 
 ### Added
@@ -53,7 +59,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Extract all DTO types from FreeElephants/json-api-php-toolkit to this project
 
-[Unreleased]: https://github.com/FreeElephants/json-api-dto/compare/0.0.9...HEAD
+[Unreleased]: https://github.com/FreeElephants/json-api-dto/compare/0.1.0...HEAD
+[0.1.0]: https://github.com/FreeElephants/json-api-dto/releases/tag/0.1.0
 [0.0.9]: https://github.com/FreeElephants/json-api-dto/releases/tag/0.0.9
 [0.0.8]: https://github.com/FreeElephants/json-api-dto/releases/tag/0.0.8
 [0.0.7]: https://github.com/FreeElephants/json-api-dto/releases/tag/0.0.7
