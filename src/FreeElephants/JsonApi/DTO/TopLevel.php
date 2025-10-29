@@ -10,16 +10,19 @@ use Psr\Http\Message\MessageInterface;
  */
 abstract class TopLevel
 {
-    /**
-     * @param MessageInterface $httpMessage
-     * @return static
-     */
-    public static function fromHttpMessage(MessageInterface $httpMessage): self
+    public static function fromHttpMessage(MessageInterface $httpMessage, bool $ignoreUnexpectedAttributes = false): self
     {
         $httpMessage->getBody()->rewind();
         $rawJson = $httpMessage->getBody()->getContents();
         $decodedJson = json_decode($rawJson, true);
 
-        return new static($decodedJson);
+        if($ignoreUnexpectedAttributes) {
+            BaseKeyValueStructure::ignoreUnexpectedAttributes($ignoreUnexpectedAttributes);
+        }
+        $dto = new static($decodedJson);
+
+        BaseKeyValueStructure::ignoreUnexpectedAttributes(false);
+
+        return $dto;
     }
 }

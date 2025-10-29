@@ -2,6 +2,8 @@
 
 namespace FreeElephants\JsonApi\DTO;
 
+use FreeElephants\JsonApi\DTO\Exception\UnexpectedValueException;
+
 /**
  * @property AbstractResourceObject|mixed $data
  */
@@ -33,7 +35,7 @@ abstract class AbstractDocument extends TopLevel
         if ($dataClassName !== 'array') {
             $data = new $dataClassName($payload['data']);
         } else {
-            throw new \UnexpectedValueException('`data` property must be typed, for array of resources use AbstractCollection instead ' . self::class);
+            throw new UnexpectedValueException('`data` property must be typed, for array of resources use AbstractCollection instead ' . self::class);
         }
         $this->data = $data;
     }
